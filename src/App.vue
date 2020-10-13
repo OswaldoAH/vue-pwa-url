@@ -4,16 +4,22 @@
       <navigation />
     </header>
     <main>
+      
     </main>
+    <footer>
+      <customFooter />
+    </footer>
   </div>
 </template>
 
 <script>
 import Navigation from "./components/Navigation";
+import CustomFooter from "./components/CustomFooter";
 export default {
   name: "app",
   components: {
     Navigation,
+    CustomFooter,
   },
 };
 </script>
@@ -28,5 +34,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+main {
+  padding-top: 75px;
 }
 </style>

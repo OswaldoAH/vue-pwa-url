@@ -19,13 +19,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name:'navigation'
+};
 </script>
 
 <style scoped>
 nav {
   position: fixed;
   width: 100%;
+  z-index: 10;
 }
 .color {
   background-color: rgb(6, 73, 102);
