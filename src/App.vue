@@ -28,55 +28,25 @@ export default {
     CustomFooter,
     CustomCard,
   },
+  methods:{
+    async getPlaces() {
+      const data = await fetch(
+        `${this.urlBase}/api/places/places/`
+      ).then(res => res.json());
+      this.places = data;
+    },
+  },
   data() {
     return {
-      places: [
-        {
-          title: "Tikal",
-          img_source:
-            "https://cache-graphicslib.viator.com/graphicslib/page-images/742x525/116000_B_Guatemala_Tikal_shutterstock_000021688951.jpg",
-          description:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate iusto tempora, sed nisi odio non dolorum, voluptatem maxime aut distinctio molestiae ex? Reprehenderit ducimus expedita enim omnis et consequatur nam.",
-          like: 0,
-        },
-        {
-          title: "Tikal",
-          img_source:
-            "https://cache-graphicslib.viator.com/graphicslib/page-images/742x525/116000_B_Guatemala_Tikal_shutterstock_000021688951.jpg",
-          description:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate iusto tempora, sed nisi odio non dolorum, voluptatem maxime aut distinctio molestiae ex? Reprehenderit ducimus expedita enim omnis et consequatur nam.",
-          like: 0,
-        },
-        {
-          title: "Tikal",
-          img_source:
-            "https://cache-graphicslib.viator.com/graphicslib/page-images/742x525/116000_B_Guatemala_Tikal_shutterstock_000021688951.jpg",
-          description:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate iusto tempora, sed nisi odio non dolorum, voluptatem maxime aut distinctio molestiae ex? Reprehenderit ducimus expedita enim omnis et consequatur nam.",
-          like: 0,
-        },
-        {
-          title: "Tikal",
-          img_source:
-            "https://cache-graphicslib.viator.com/graphicslib/page-images/742x525/116000_B_Guatemala_Tikal_shutterstock_000021688951.jpg",
-          description:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate iusto tempora, sed nisi odio non dolorum, voluptatem maxime aut distinctio molestiae ex? Reprehenderit ducimus expedita enim omnis et consequatur nam.",
-          like: 0,
-        },
-        {
-          title: "Tikal",
-          img_source:
-            "https://cache-graphicslib.viator.com/graphicslib/page-images/742x525/116000_B_Guatemala_Tikal_shutterstock_000021688951.jpg",
-          description:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate iusto tempora, sed nisi odio non dolorum, voluptatem maxime aut distinctio molestiae ex? Reprehenderit ducimus expedita enim omnis et consequatur nam.",
-          like: 0,
-        },
-      ],
+      urlBase: "http://127.0.0.1:8000",
+      places: [],
     };
   },
+  created(){
+    this.getPlaces();
+  }
 };
 </script>
-
 <style>
 body {
   margin: 0;
